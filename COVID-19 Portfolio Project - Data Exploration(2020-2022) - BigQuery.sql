@@ -169,10 +169,7 @@ SELECT *, (rolling_people_vaccinated/Population)*100
 FROM PercentPopulationvsVaccinated
 
 
-
-
 -- Creating View to store data for later visualizations
-
 CREATE VIEW Covid19.PercentPopulationVaccinatedView AS
 SELECT
     dea.continent,
@@ -189,3 +186,9 @@ SELECT
     AND dea.date = vac.date
   WHERE dea.continent IS NOT NULL
   ORDER BY dea.location, dea.date
+
+-- Check the View
+SELECT *
+FROM Covid19.PercentPopulationVaccinatedView
+
+
